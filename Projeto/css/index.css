@@ -1,0 +1,41 @@
+#logo {
+    border-radius: 25%;
+}
+
+.cont{
+    justify-content: space-between;
+    margin-left: 100px;
+}
+
+.navbar-brand{
+    display: flex;
+    align-items: center;
+}
+
+.navbar{
+    margin-bottom: 100px;
+}
+
+.carousel{
+    width: 800px;   
+}
+
+.title{
+    font-size: 3rem;
+}
+
+.container-carousel{
+    display: flex;
+    justify-content: center;
+    border-bottom : 1px solid black;
+    border-top: 1px solid black;
+}
+
+.container{
+    display: flex;
+}
+
+.container-noticias{
+    border-right: 1px solid black;
+    text-align: left;
+}
