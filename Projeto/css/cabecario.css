@@ -1,0 +1,29 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+html{
+    height: 100vh;
+    width: 100vw;
+}
+.title{
+    font-size: 3rem;
+}
+#logo{
+    border-radius: 25%;
+}
+
+.cont{
+    justify-content: space-between;
+    margin-left: 100px;
+}
+
+.navbar-brand{
+    display: flex;
+    align-items: center;
+}
+
+.navbar{
+    margin-bottom: 1px;
+}

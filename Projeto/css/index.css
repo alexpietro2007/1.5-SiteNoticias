@@ -1,46 +1,6 @@
 
-*{
-    padding: 0px;
-    margin: 0px;
-}
-
-html{
-    height: 100vh;
-    width: 100vw;
-}
-
-.container {
-    display: flex;
-    max-width: 100vw;
-    max-height: 100vh;
-    padding: 0px;
-    margin: 0;
-}
-
-#logo{
-    border-radius: 25%;
-}
-
-.cont{
-    justify-content: space-between;
-    margin-left: 100px;
-}
-
-.navbar-brand{
-    display: flex;
-    align-items: center;
-}
-
-.navbar{
-    margin-bottom: 1px;
-}
-
 .carousel{
-    width: 800px; 
-}
-
-.title{
-    font-size: 3rem;
+    width: 800px;
 }
 
 .container-carousel{
@@ -60,6 +20,7 @@ html{
     margin-left: 100px;
     margin-right: 0px;
     margin-top: 10px;
+    text-decoration: none;
 }
 
 .container-noticias{
@@ -74,6 +35,7 @@ html{
     gap: 50px;
     height: 100%;
     overflow: hidden;
+    text-decoration: none;
 }
 
 .container-etec{
@@ -88,6 +50,7 @@ html{
     margin-right: 50px;
     gap: 50px;
     overflow: hidden;
+    text-decoration: none;
 }
 
 .container-propaganda{
@@ -107,4 +70,13 @@ html{
     & a{
         height: min-content;
     }
+}
+
+.card a{
+    text-decoration: none;
+    color: #555;
+}
+
+.card a:hover{
+    color: #893dd0;
 }
