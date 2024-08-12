@@ -1,0 +1,12 @@
+<div class="main-content">
+    <div class="title">{{noticiaTitulo}}</div>
+    <p>{{info}}</p>
+            
+    {{#each sections}}
+    <div class="subtitle">
+        {{this.subtitulo}}
+        <P>{{this.text}}</P>
+    </div>
+    {{/each}}
+    {{>criadores}}
+</div>
