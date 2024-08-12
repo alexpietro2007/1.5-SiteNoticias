@@ -4,26 +4,30 @@ import { fileURLToPath } from 'url';
 import { create } from 'express-handlebars';
 import { readFileSync } from 'fs';
 
-// Configure the filename and dirname variables
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-// Create Handlebars instance with partials directory
 const hbs = create({partialsDir: [path.join(__dirname, 'views', 'partials')]});
 
-// Read JSON data (ensure 'data.json' is included in your deployment or use environment variables)
-const jsonData = JSON.parse(readFileSync(path.join(__dirname, 'public', 'data', 'data.json'), 'utf8'));
+// Verifique se o arquivo JSON está acessível
+const jsonDataPath = path.join(__dirname, 'public', 'data', 'data.json');
+let jsonData;
+try {
+    jsonData = JSON.parse(readFileSync(jsonDataPath, 'utf8'));
+} catch (error) {
+    console.error('Erro ao ler o arquivo JSON:', error);
+    process.exit(1); // Saia do processo se não conseguir ler o arquivo
+}
 
 const app = express();
 
-// Serve static files from the 'public' directory
+// Servir arquivos estáticos
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-// Set Handlebars as the view engine
+// Configurar Handlebars
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// Define routes
+// Definir rotas
 app.get('/', (req, res) => {
     res.render('home');
 });
@@ -40,5 +44,6 @@ app.get('/noticia/:id', (req, res) => {
     });
 });
 
-// Listen on port 3000 (Vercel uses a different port)
-app.listen(process.env.PORT || 3000, () => console.log(`App rodando na porta ${process.env.PORT || 3000}`));
+// Ouça na porta fornecida pelo ambiente de execução
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`App rodando na porta ${PORT}`));
